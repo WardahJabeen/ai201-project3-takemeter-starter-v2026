@@ -42,6 +42,30 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
+**Community:** the public YouTube comment section of The Diary of a CEO's
+interview with Jeffrey Ladish on AI risk
+(https://www.youtube.com/watch?v=qDzg-xvkeXw). Comments are public, need no
+login to read, and range from one-line jokes to multi-paragraph arguments.
+
+**Candidate distinctions from my first read (35 comments):**
+
+1. **Some comments point at something specific from the video, most don't.**
+   A timestamp ("1:23:23", "27:00") or a named event ("OpenAI's own spawned
+   agents… took over its security system") versus a general "this is
+   terrifying."
+2. **Some give a reason for their claim, most just state it.** "We haven't
+   even been able to align human leaders like Putin… yet we expect to align a
+   superintelligence" connects a claim to support. "Only humanity would create
+   something smarter than itself and then be dumb enough to think they could
+   control it" is a claim on its own.
+3. **Some are about the show, the rest are about AI.** Comments addressed to
+   the host or guest ("Thank you both", "great respect to your guest") versus
+   comments about AI itself. About half the comments I read were the first
+   kind.
+4. **Length.** The comments that give reasons run three or more sentences;
+   most others are one or two. Easy to point at, but probably a symptom of
+   distinction 2 rather than a distinction of its own.
+
 
 
 ---
