@@ -138,7 +138,9 @@ or timestamp) and that detail is the *reason* the claim holds, it's
 is only a general statement ("companies lie", "humans are greedy"), it's
 `reaction`, however true it sounds. A timestamp or quote followed only by a
 feeling ("At 41:10 he says nobody knows how to align these. That's
-terrifying.") is also `reaction`. So the post above is `reaction`.
+terrifying.") is also `reaction`. Fiction doesn't count as a named example:
+a comment whose support is Terminator or The Matrix is `reaction`. So the
+post above is `reaction`.
 
 **Second rule, for `praise` vs `reaction`:** a comment about the host or guest
 is `praise` only if it evaluates them ("great guest", "well explained"). If
@@ -156,19 +158,31 @@ the show.
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** The public YouTube comment section of The
+Diary of a CEO's interview with Jeffrey Ladish
+(https://www.youtube.com/watch?v=qDzg-xvkeXw). I copied the comments by hand
+and stripped usernames, dates, like counts and "Reply" lines. Comments are
+kept whole; multi-line comments are joined onto one line.
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+I left out bot spam (promos for "Claudixum", a "Winner's Wealthgate" ad, and
+a near-copy of the top comment), comments that weren't about the episode or AI
+(an intro timestamp, a knee-surgery story, a request for PDF summaries),
+non-English comments, and near-duplicates. My first 200 had only 25
+arguments, so I went back for more and swapped out 13 of the shortest,
+vaguest reactions ("We're doomed.", "If we die, we die.") to meet my own
+balance criterion.
+
+**How I labelled them:** I labelled the first 20 cold. The other 180 were pre-labelled by AI using my definitions and decision rules,
+then I read every one and corrected argued a few of them.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `reaction` | 102 | 51% |
+| `praise` | 58 | 29% |
+| `argument` | 40 | 20% |
+| **Total** | 200 | 100% |
 
 **Three hard cases**
 
@@ -176,25 +190,36 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* "I'd like to point out that we can't even get pets "aligned""
 >
-> *Could have been:*
+> *Could have been:* `reaction` or `argument`
 >
-> *I chose, because:*
+> *I chose, because:* `reaction`. It's a comparison, like the nuclear-weapons
+> one I counted as `argument`, so it made me stop. The difference is that
+> nuclear weapons are a specific named example, while "pets" is a whole
+> category. Nothing in it is something you could point at, so under my rule
+> it's a bare claim.
 
 **2.**
-> *The post:*
+> *The post:* "My mind is blown..... spinning..... and so fucking grateful!!"
 >
-> *Could have been:*
+> *Could have been:* `praise` or `reaction`
 >
-> *I chose, because:*
+> *I chose, because:* `praise`. "My mind is blown" on its own is a feeling,
+> which would make it `reaction`. But "grateful" is thanks aimed at the show,
+> and my rule says a comment that thanks or compliments the show is `praise`
+> even when it also says how the topic made them feel.
 
 **3.**
-> *The post:*
+> *The post:* "The longer the interview gets, the more the guest is avoiding
+> crucial issues that Steven is pointing out"
 >
-> *Could have been:*
+> *Could have been:* `praise` or `reaction`
 >
-> *I chose, because:*
+> *I chose, because:* `reaction`. It evaluates the guest, which sounds like
+> `praise`, but it's negative, and my `praise` definition only covers thanks
+> and compliments. This one showed me a gap: criticism of the show has no
+> label of its own, so it lands in `reaction`.
 
 ---
 
@@ -227,17 +252,32 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Eight made-up comments that sit on the boundaries
+  between my labels, to stress-test my definitions.
+- *What came back:* Eight posts. One was "At 41:10 he says nobody knows how
+  to align these systems. That's terrifying." It names a timestamp, so my
+  first rule called it `argument`, even though it argues nothing.
+- *What I changed:* I tightened `argument` so the specific detail has to be
+  the *reason* the claim holds, and added that a timestamp followed only by a
+  feeling is `reaction`. I also decided historical examples (like nuclear
+  weapons) count as specific, and fiction (Terminator, The Matrix) doesn't.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* A check of my first 20 cold labels against my own rules.
+- *What came back:* Four disagreements. Two long comments I'd called
+  `reaction` named specific people and the test design as their reasons, and
+  one I'd called `argument` was just a timestamp plus speculation.
+- *What I changed:* I agreed with all four and changed them. The pattern
+  mattered more than the four rows: I was pushing long, reasoned comments
+  into `reaction`, which would have starved my rarest label.
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** Rows 22–201 were pre-labelled by AI (Claude)
+from my definitions and decision rules, and are marked `pre-labelled` in the
+`note` column. I read every one, questioned a few, and in the end kept the
+labels as they are. The AI also suggested which
+spam, off-topic and short-reaction rows to swap out; I made the final call on
+each.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
