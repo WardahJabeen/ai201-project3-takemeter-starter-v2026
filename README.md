@@ -78,33 +78,74 @@ login to read, and range from one-line jokes to multi-paragraph arguments.
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `praise`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** The comment evaluates the episode, the host or the guest
+(thanks, compliments, "best interview yet") rather than talking about AI
+itself.
 
 **Example 1:**
->
+> the best podcast on AI I have recently watched. on/not on this channel.
+> thank you.
 
 **Example 2:**
->
+> My favorite guest on this subject yet. Easily understandable.
+> Congratulations on a beautifully produced episode.
+
+### `reaction`
+
+**Definition:** A response to AI risk (fear, a joke, a quote or a bare claim)
+that offers no concrete support for what it says.
+
+**Example 1:**
+> Only humanity would create something smarter than itself and then be dumb
+> enough to think they could control it
+
+**Example 2:**
+> These bots have learned from humans very well. Cheating, stealing, lying.
+> Only 25 mins in and this sounds like some insane fever dream.
+
+### `argument`
+
+**Definition:** A claim about AI or AI safety where a specific detail (a
+named event, company, country, person, historical example, number or moment
+from the video) is given as the reason the claim holds.
+
+**Example 1:**
+> The fact that OpenAIs own spawned agents ran amok and took over its
+> security system is enough proof that these companies aren't capable of
+> managing safety.
+
+**Example 2:**
+> It's terrifyingly profound when Steven points out at 1:23:23 that we
+> haven't even been able to align human leaders like Putin or Kim Jong-un,
+> yet we expect to somehow perfectly align a digital superintelligence.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `reaction` and `argument`. The post that sat between
+them:
+> How can we expect alignment from models or agents when companies aren't
+> aligned with what they SAY and what they ACTUALLY DO?
+
+It makes a real point, but it never says which company or what they did.
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+If the comment backs its claim about AI with something specific you could
+point at (a named event, company, country, person, historical example, number
+or timestamp) and that detail is the *reason* the claim holds, it's
+`argument`, even if it's one sentence or phrased as a question. If the support
+is only a general statement ("companies lie", "humans are greedy"), it's
+`reaction`, however true it sounds. A timestamp or quote followed only by a
+feeling ("At 41:10 he says nobody knows how to align these. That's
+terrifying.") is also `reaction`. So the post above is `reaction`.
+
+**Second rule, for `praise` vs `reaction`:** a comment about the host or guest
+is `praise` only if it evaluates them ("great guest", "well explained"). If
+it's about how the topic makes them or the commenter feel ("Watching Steven's
+nervous self-soothing… is giving me anxiety"), it's `reaction`. A comment that
+does both ("Great interview! … terrifying") is `praise` if it's addressed to
+the show.
 
 
 
