@@ -47,6 +47,12 @@ interview with Jeffrey Ladish on AI risk
 (https://www.youtube.com/watch?v=qDzg-xvkeXw). Comments are public, need no
 login to read, and range from one-line jokes to multi-paragraph arguments.
 
+**What the classifier does:** it sorts each comment into one of three labels.
+`praise` is a comment about the show itself, `reaction` is a gut response to
+AI risk, and `argument` is a claim about AI backed by something specific you
+could point at. The useful part is finding the arguments, which are the
+comments worth reading but are buried under jokes and thank-yous.
+
 **Candidate distinctions from my first read (35 comments):**
 
 1. **Some comments point at something specific from the video, most don't.**
@@ -227,16 +233,33 @@ then I read every one and corrected argued a few of them.
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** `distilbert-base-uncased`
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
+3 epochs, learning rate 2e-5, batch size 16, seed 42, 128 tokens per post.
+Trained on `cpu`.
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** Nothing in the training
+settings. I wanted a first run on the defaults before deciding what to change.
+I did have to fix two things just to get it to run: Windows Smart App Control
+blocked pyarrow 26.0.0, so I installed pyarrow 21.0.0, and an expired Hugging
+Face login token stopped the model downloading.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
+Train 139, validation 31, test 30.
 
+| Label | Test count |
+|---|---|
+| `praise` | 9 |
+| `reaction` | 15 |
+| `argument` | 6 |
+
+`argument` has only 6 examples in the test split, under the notebook's
+threshold of 8. One right or wrong guess moves its F1 a lot, so I expect it to
+jump around between seeds next unit. On this first run the model got none of
+them right (F1 0.000) and mostly guessed `reaction` (accuracy 0.533).
 
 
 ---
@@ -252,25 +275,34 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:* Eight made-up comments that sit on the boundaries
-  between my labels, to stress-test my definitions.
-- *What came back:* Eight posts. One was "At 41:10 he says nobody knows how
-  to align these systems. That's terrifying." It names a timestamp, so my
-  first rule called it `argument`, even though it argues nothing.
-- *What I changed:* I tightened `argument` so the specific detail has to be
-  the *reason* the claim holds, and added that a timestamp followed only by a
-  feeling is `reaction`. I also decided historical examples (like nuclear
-  weapons) count as specific, and fiction (Terminator, The Matrix) doesn't.
+- *What I asked for:* After coming up with my own ideas for labels, I gave
+  an AI tool the same comments and asked it for 2–4 labels, to see if it
+  would split them the same way.
+- *What came back:* Three labels that matched mine (`praise`, `reaction`,
+  `argument`), plus an `off_topic` label. It put "Watching Steven's nervous
+  self-soothing with his sleeves is giving me anxiety" in `off_topic`.
+- *What I changed:* I kept the three that matched and looked into the one
+  that didn't. I pushed back on that comment: it's anxiety about AI, picked up
+  from the host, so it's `reaction`. That gave me my rule that a comment about
+  the host or guest is only `praise` if it evaluates them. I didn't add
+  `off_topic` as a label. Truly off-topic comments got swapped out of the
+  dataset instead. I also had it write eight boundary posts to stress-test the
+  definitions, which made me tighten `argument`: the specific detail has to
+  be the reason the claim holds, and fiction like Terminator doesn't count.
 
 **Moment 2**
 
-- *What I asked for:* A check of my first 20 cold labels against my own rules.
-- *What came back:* Four disagreements. Two long comments I'd called
-  `reaction` named specific people and the test design as their reasons, and
-  one I'd called `argument` was just a timestamp plus speculation.
-- *What I changed:* I agreed with all four and changed them. The pattern
-  mattered more than the four rows: I was pushing long, reasoned comments
-  into `reaction`, which would have starved my rarest label.
+- *What I asked for:* After I labelled the first 20 myself, I had the AI
+  pre-label the other 180 using my definitions and decision rules.
+- *What came back:* A full set of labels, with hard cases, possible spam and
+  off-topic rows flagged.
+- *What I changed:* I argued about the labels instead of accepting them. I
+  disagreed on whether off-topic
+  comments were just reactions, asked whether some were really spam or just
+  mentioned the same product, and questioned borderline ones, like whether
+  the "tactical bun" joke was really an indirect reaction. I swapped out the spam, duplicates, near-copies and
+  non-English comments for real comments I hadn't used yet, and kept or
+  changed each label based on my own decision rule.
 
 **Pre-labelling disclosure:** Rows 22–201 were pre-labelled by AI (Claude)
 from my definitions and decision rules, and are marked `pre-labelled` in the
