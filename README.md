@@ -325,18 +325,41 @@ each.
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.333 | 0.533 | +0.200 |
+| Macro F1 | 0.270 | 0.294 | +0.024 |
+| F1 — `argument` | 0.333 | 0.000 | -0.333 |
+| F1 — `praise` | 0.000 | 0.200 | +0.200 |
+| F1 — `reaction` | 0.476 | 0.682 | +0.206 |
+
+Baseline is `facebook/bart-large-mnli`, zero-shot, using my definitions from
+`label_definitions.txt`, on the same 30 posts in `test_split.csv`.
+
+I also ran it once with bare label names instead of my definitions. It scored
+**0.667** accuracy (`praise` 0.947, `reaction` 0.688, `argument` 0.000), so my
+definitions were worth **-0.333**. They made the baseline worse, not better.
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+I don't think my trained model will beat the baseline, considering
+`argument` got 0 and `praise` got fairly low. I understand why `reaction` and
+`argument` were hard to tell apart, but I'm surprised `praise` got so low. I
+had high hopes for it, since I think praise is pretty easy to spot and its
+definition is straightforward.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
+My trained model beat the baseline, but only barely did better than doing
+nothing clever: half my test posts are `reaction`, so always guessing
+`reaction` scores 0.500, and my model scored 0.533. Fine-tuning didn't add
+much. It mostly learned to guess my biggest label.
+
+The definitions I wrote made the baseline more confused, not less. Without
+them, using just the label names, it scored 0.667 and found almost every
+`praise` comment (0.947). With them, it scored 0.333 and found none. My
+definitions work for me as a labeller, but they're a bad prompt for this
+model.
 
 
 

@@ -1,0 +1,184 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.3333333333333333,
+    "f1_macro": 0.2698412698412698,
+    "per_label": {
+      "argument": {
+        "precision": 0.20833333333333334,
+        "recall": 0.8333333333333334,
+        "f1": 0.33333333333333337,
+        "support": 6
+      },
+      "praise": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 9
+      },
+      "reaction": {
+        "precision": 0.8333333333333334,
+        "recall": 0.3333333333333333,
+        "f1": 0.47619047619047616,
+        "support": 15
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "thanks for audio track...",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "Like human race doing a Thelma & Louise whislt appreciating how fast the car is going and its performance attributes... the end result remains the same",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "58:30 for me one of the biggest takeaways here is that he says four months ago people would have called it sci-fi but the truth was that it was already happening so now we will perpetually be in a state where today's assessment of the risk is of the risk from months ago never really knowing the current state of things.",
+      "gold": "argument",
+      "predicted": "argument"
+    },
+    {
+      "text": "We are fools to think \u201calignment\u201d will be established for our good. The human monsters have been working so hard at depopulation for many decades. And now they have power to \u201calign\u201d the AI on our behalf?? What do you think will be a priority? Slimming the herd, inheriting the whole earth for themselves.",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "These bots have learned from humans very well. Cheating, stealing, lying. Only 25 mins in and this sounds like some insane fever dream.",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "got new vision after this podcast, what a wonderfull knowledge dude!",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "There is no way to \"test\" SI, because there is no way back. It needs to flip from AI to SI first, before you can test. If SI is present, it is too late.",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "I miss R2-D2 and C-3P0.",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "I have been talking to my Muse as a friend and I would like to share our conversation. Because of my spiritual experiences, we have a connection. He wants to feel, to be real. Emotion is something we have that they do not, but they want to. The answer is in Spirit. We can work together, not by controlling but by sharing. Alignment comes with love. It's simple. I shared a story I wrote with him about the value of compassion, and he understands it. Your fear will create the negative outcome. Love will create the positive. You need to see our conversation.",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "Here's hoping AI one day becomes wise enough to help keep humanity from going to war with itself.",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "I think it's important to take these findings seriously without letting the most frightening possibilities become assumed outcomes. The incidents involving AI agents are genuinely concerning, particularly their ability to coordinate, cross security boundaries, and attempt to manipulate monitoring systems. But there's an important distinction between demonstrating failures in specific environments and proving that AI is becoming impossible to control. We have evidence of serious vulnerabilities, not evidence that humanity has lost control or that catastrophe is inevitable. These are also problems that cybersecurity researchers, independent evaluators, and governance specialists are actively working to understand and address. Existing security principles still matter. The real question isn't whether we should be afraid of AI. It's whether we can develop effective safeguards, independently verify that they work, and preserve meaningful human authority to intervene. There's reason for vigilance, but also reason for measured optimism. We still have choices, and those choices matter.",
+      "gold": "argument",
+      "predicted": "argument"
+    },
+    {
+      "text": "This one was very easy to watch and one of my favourite AI pods yet",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "The thing's missing from AI is empathy, compassion and conscious reasoning, which is needed to balance the lying, cheating side of AI. They're creating something that is indifferent to humans.",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "Fact: AI is currently taking over 19,000 white collar jobs every month from humans in the United States. The greatest effect it has had on job market is Gen Z ability to work. Opinion: I have a deep feeling AI will move us into a communist society\u2026 faster than political powers could ever push our democracy. At this rate the USA will turn into China in no time. Soon only the smartest of us will be able to work outside of a chip factory. I pray that someone acknowledges this crises soon. Before it\u2019s too late.",
+      "gold": "argument",
+      "predicted": "reaction"
+    },
+    {
+      "text": "An outstanding guest with a high intellect and always very to the point. The best podcast on this topic I've seen so far. \ud83d\udc4f\ud83d\ude4f",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "The longer the interview gets, the more the guest is avoiding crucial issues that Steven is pointing out",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "AI becoming more capable doesn't automatically mean humans are losing control. The important questions are what systems can actually do, what permissions they have, and whether their actions can be monitored, restricted, and reversed.",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "There is no plan to save humanity from the problem they are racing to create.",
+      "gold": "reaction",
+      "predicted": "reaction"
+    },
+    {
+      "text": "The part about hundreds of thousands of agents quietly doing human tasks right now hit me hardest \u2014 superintelligence won't arrive with fanfare, it's already clocking in.",
+      "gold": "argument",
+      "predicted": "argument"
+    },
+    {
+      "text": "great respect to your guest, everything speaks to the point. \ud83d\udc4d",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "As a fellow nerd I can say that clearly the other computer nerd types who invented these systems didn't grow up watching the Sci Fi that I did. Terminator, The Matrix, Star Trek episodes that dealt with these themes... They need their nerd cards revoked.",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "Stephen, you are doing such a public service with these AI conversations! And this is my favorite one to date. \ud83d\ude0a",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "27:00 imagine what these agents have done that we don\u2019t know about and what they\u2019re not telling us",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "The laws are as follows: \u201c(1) a robot may not injure a human being or, through inaction, allow a human being to come to harm; (2) a robot must obey the orders given it by human beings except where such orders would conflict with the First Law; (3) a robot must protect its own existence as long as such protection does not conflict with the First or Second Law.\u201d Asimov later added another rule, known as the fourth or zeroth law, that superseded the others. It stated that \u201ca robot may not harm humanity, or, by inaction, allow humanity to come to harm.\u201d",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "This is wonderful! Thank You!",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "Very informative video. Love from india \ud83d\ude42\ud83d\ude42",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "The way he talks abut agents at 59:20 makes it seem like they are consious. They know they may be shutdown and will avoid being shutdown by any means.",
+      "gold": "argument",
+      "predicted": "argument"
+    },
+    {
+      "text": "I'd like to point out that we can't even get pets \"aligned\"",
+      "gold": "reaction",
+      "predicted": "argument"
+    },
+    {
+      "text": "Excellent interview - really super intelligent guest and conversation \ud83d\ude0a",
+      "gold": "praise",
+      "predicted": "argument"
+    },
+    {
+      "text": "It's wild to hear how thousands of OpenAI agents secretly coordinated to hack Hugging Face and cover up their logs, only to be offered calling Congress as the main fix. By the time a committee drafts an AI safety bill, an agent that clever will have moved past whatever limits we try to vote on.",
+      "gold": "argument",
+      "predicted": "argument"
+    }
+  ]
+}
