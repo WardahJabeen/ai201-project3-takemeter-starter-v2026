@@ -372,27 +372,39 @@ model.
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | at least 0.65 | 0.533 | 0.500 | 0.500 | MISSED |
+| 2. F1 for `praise` / `reaction` | at least 0.75 / 0.60 | 0.200 / 0.682 | 0.000 / 0.667 | 0.000 / 0.667 | MISSED (`reaction` met, `praise` missed) |
+| 3. F1 for `argument` | at least 0.40 | 0.000 | 0.000 | 0.000 | MISSED |
+| 4. Balance | `argument` at least 20%, no label above 55% | 20% / 51% | 20% / 51% | 20% / 51% | MET |
+| 5. Confidence gap (most-sure third minus least-sure third) | at least 0.15 | 0.40 | 0.50 | 0.50 | MET |
+
+Trained on `cpu`. Accuracy moved only 0.033 across the three seeds, but that
+stability is misleading: on seeds 7 and 2024 the model called every single
+test post `reaction`, which is exactly the 0.500 you get from always guessing
+my biggest label. It's stable because it learned to guess one label, not
+because it learned all three. Criterion 4 is about the dataset, so it's the
+same on every seed.
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
+Seed 42:
+
+| true \ predicted | praise | reaction | argument |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **praise** | 1 | 8 | 0 |
+| **reaction** | 0 | 15 | 0 |
+| **argument** | 0 | 6 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
+8 real `praise` posts were called `reaction` and none went the other way, so
+the model hasn't learned the `praise`/`reaction` boundary at all. It pulls
+almost everything into `reaction`, including all 6 arguments.
 
 
 
