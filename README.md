@@ -417,11 +417,11 @@ almost everything into `reaction`, including all 6 arguments.
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | at least 0.65 | MISSED | 0.533 / 0.500 / 0.500. None of the three seeds reached 0.65; the best was 0.12 short |
+| 2 | F1 for `praise` / `reaction` | at least 0.75 / 0.60 | MISSED | `reaction` held on all three (0.682 / 0.667 / 0.667), but `praise` was 0.200 / 0.000 / 0.000, and the criterion needs both |
+| 3 | F1 for `argument` | at least 0.40 | MISSED | 0.000 on every seed. The model never predicted `argument` once |
+| 4 | Balance | `argument` at least 20%, no label above 55% | MET | `labels.csv` has 40 / 200 `argument` (exactly 20%) and 102 / 200 `reaction` (51%). It's a property of the data, so it's the same on every seed |
+| 5 | Confidence gap | at least 0.15 | MET | 0.40 / 0.50 / 0.50, so it held on all three. But see the note under the diagnoses: this pass is hollow |
 
 **Diagnoses**
 
@@ -433,6 +433,24 @@ almost everything into `reaction`, including all 6 arguments.
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+**Misses 1, 2 and 3: the model collapsed to `reaction`.** On seeds 7 and
+2024 it called every test post `reaction` (29 of 30 on seed 42). That's why
+accuracy sits at 0.500, which is `reaction`'s share of the test split, and why
+`praise` and `argument` score 0.000.
+
+This is the model, not my labels. A boundary I applied inconsistently would
+spread errors across one pair of labels, but here nothing is predicted except
+`reaction`, and even `praise`, my easiest label, fails. My agreement rate with
+staff (23 / 30, 76.7%) is in the normal range, so there's no sign I apply
+rules inconsistently.
+
+Cause: the model can't reach the task with this much training. At 3 epochs
+it gets only about 33 gradient steps, too few to move off the majority class.
+The fix I'll try is more epochs, changing nothing else.
+
+**Criterion 5** is MET but hollow: with one predicted label, the gap doesn't
+show the model can tell the labels apart. I'll recheck it after the fix.
 
 
 
