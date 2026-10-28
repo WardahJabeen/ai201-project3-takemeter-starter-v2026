@@ -311,6 +311,22 @@ labels as they are. The AI also suggested which
 spam, off-topic and short-reaction rows to swap out; I made the final call on
 each.
 
+**Moment 3 (unit 6)**
+
+- *What I asked for:* I had the AI (Claude) go through `agreement_results.json`
+  and my three-seed results, sort my staff-set disagreements into the three
+  piles, and help draft the verdicts, diagnoses and run logs in this README.
+- *What came back:* It caught that 8 of my 15 "disagreements" were me writing
+  `hot-take` instead of `hot_take`, so my real rate was 23 / 30, not 15 / 30.
+  It found a pattern in the 7 real ones: I treated any number as evidence and
+  missed numbers that were doing real work. On the model side, it pointed out
+  that every seed predicts `reaction` for almost every post, which matches
+  under-training rather than inconsistent labels. It also ran the
+  Milestone 5 re-run for me.
+- *What I changed:* I fixed the label spelling myself and re-ran the
+  agreement check. I picked more epochs as my one change because the
+  diagnosis pointed at training. I reveiwed the diagnoses a bit before submitting.
+
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
      Don't fill these in during unit 5.
