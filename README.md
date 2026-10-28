@@ -464,7 +464,7 @@ show the model can tell the labels apart. I'll recheck it after the fix.
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 23 / 30 = 76.7%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -487,26 +487,74 @@ show the model can tell the labels apart. I'll recheck it after the fix.
      what you did across your own 200. -->
 
 **1.**
-> *The post:*
+> *The post:* "Times are down about 3% since the shoe rules changed, so obviously the shoes are the whole story and the sport has a problem."
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `hot_take` / `analysis`
 >
-> *My call, and why:*
+> *My call, and why:* Staff is right. This is almost Rule 1's own example: "so obviously" shows the conclusion came first, and the 3% is decoration.
 >
-> *Which pile:*
+> *Which pile:* (a)
 
 **2.**
-> *The post:*
+> *The post:* "Checked the entry lists. 41% of this year's field have never run the distance before, against 26% five years ago. That's why the finish-line photos look different, not because standards dropped."
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `analysis` / `hot_take`
 >
-> *My call, and why:*
+> *My call, and why:* Staff is right. "That's why" makes the numbers the reason for the conclusion, so the fact is load-bearing (Rule 1).
 >
-> *Which pile:*
+> *Which pile:* (a)
+
+**3.**
+> *The post:* "Everyone blames the hill at 18 miles. I split the field into people who ran the first half under 1:45 and over, and the slowdown after 18 was almost identical for both groups. If the hill were the problem the fast starters would fall apart harder."
+>
+> *Staff said / I said:* `analysis` / `reaction`
+>
+> *My call, and why:* Staff is right. Nothing just happened to the writer and there's no feeling. A named comparison (under / over 1:45) is used to knock down a claim (Rule 3).
+>
+> *Which pile:* (a)
+
+**4.**
+> *The post:* "Got up at 5, drove ninety minutes, and it's cancelled. Standing in the car park in the rain reading the email."
+>
+> *Staff said / I said:* `reaction` / `analysis`
+>
+> *My call, and why:* Staff is right. It has times in it, but `analysis` has to make an argument, and this post doesn't. It's what just happened and how it felt.
+>
+> *Which pile:* (a)
+
+**5.**
+> *The post:* "First run back after eight weeks out. Two miles, slower than my warm-up used to be, and I don't care even slightly."
+>
+> *Staff said / I said:* `reaction` / `analysis`
+>
+> *My call, and why:* Staff is right. The numbers describe the run rather than support a claim, and "I don't care even slightly" is pure feeling.
+>
+> *Which pile:* (a)
+
+**6.**
+> *The post:* "Ran the same loop in 4C and in 24C within a fortnight, same effort by heart rate. 90 seconds slower in the heat over six miles. People keep saying heat costs you 'a bit' and it's more than that."
+>
+> *Staff said / I said:* `analysis` / `reaction`
+>
+> *My call, and why:* Staff is right that it isn't `reaction`, because it argues against a claim. But the rules never say whether a self-reported, one-runner measurement counts as "checkable". Nobody else can check this run. If it counts, almost any personal post with a number in it becomes `analysis`.
+>
+> *Which pile:* (b)
+
+**7.**
+> *The post:* "The club needs to stop pretending the Tuesday session is for everyone. It isn't and it never has been."
+>
+> *Staff said / I said:* `hot_take` / `reaction`
+>
+> *My call, and why:* I'd argue it. Rule 2 says `hot_take` asserts something general "about the world", and this is about one club the writer belongs to, which is personal and local. It's a weak case, though: `reaction` needs something that just happened, and nothing has.
+>
+> *Which pile:* (c)
 
 **What the pattern in my disagreements tells me:**
-
-
+Five of my seven are pile (a), and they follow one pattern. In 1, 4 and 5 I
+treated any number as evidence. In 2 and 3 I missed numbers that were doing
+real work. Saying it plainly: my weak spot is deciding whether a fact is
+load-bearing. The one real gap in the rules is #6, about what "checkable" means
+for personal data, and #7 is my only arguable win.
 
 ---
 
