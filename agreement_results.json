@@ -1,0 +1,43 @@
+{
+  "compared": 30,
+  "agreed": 23,
+  "agreement_rate": 0.7666666666666667,
+  "disagreements": [
+    {
+      "text": "Everyone blames the hill at 18 miles. I split the field into people who ran the first half under 1:45 and over, and the slowdown after 18 was almost identical for both groups. If the hill were the problem the fast starters would fall apart harder.",
+      "staff": "analysis",
+      "mine": "reaction"
+    },
+    {
+      "text": "Checked the entry lists. 41% of this year's field have never run the distance before, against 26% five years ago. That's why the finish-line photos look different, not because standards dropped.",
+      "staff": "analysis",
+      "mine": "hot_take"
+    },
+    {
+      "text": "Ran the same loop in 4C and in 24C within a fortnight, same effort by heart rate. 90 seconds slower in the heat over six miles. People keep saying heat costs you 'a bit' and it's more than that.",
+      "staff": "analysis",
+      "mine": "reaction"
+    },
+    {
+      "text": "The club needs to stop pretending the Tuesday session is for everyone. It isn't and it never has been.",
+      "staff": "hot_take",
+      "mine": "reaction"
+    },
+    {
+      "text": "Times are down about 3% since the shoe rules changed, so obviously the shoes are the whole story and the sport has a problem.",
+      "staff": "hot_take",
+      "mine": "analysis"
+    },
+    {
+      "text": "Got up at 5, drove ninety minutes, and it's cancelled. Standing in the car park in the rain reading the email.",
+      "staff": "reaction",
+      "mine": "analysis"
+    },
+    {
+      "text": "First run back after eight weeks out. Two miles, slower than my warm-up used to be, and I don't care even slightly.",
+      "staff": "reaction",
+      "mine": "analysis"
+    }
+  ],
+  "staff_posts_not_in_mine": 0
+}
