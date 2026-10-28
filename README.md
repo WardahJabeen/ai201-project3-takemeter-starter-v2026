@@ -588,17 +588,32 @@ of those steps bigger without adding training time.
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1. Overall accuracy | at least 0.65 | 0.800 | 0.767 | pending | pending |
-| 2. F1 for `praise` / `reaction` | at least 0.75 / 0.60 | pending | pending | pending | pending |
-| 3. F1 for `argument` | at least 0.40 | pending | pending | pending | pending |
-| 4. Balance | `argument` at least 20%, no label above 55% | 20% / 51% | 20% / 51% | 20% / 51% | MET (labels unchanged) |
-| 5. Confidence gap (most-sure third minus least-sure third) | at least 0.15 | pending | pending | pending | pending |
+| 1. Overall accuracy | at least 0.65 | 0.800 | 0.767 | 0.700 | MET |
+| 2. F1 for `praise` / `reaction` | at least 0.75 / 0.60 | 1.000 / 0.833 | 0.941 / 0.811 | 0.800 / 0.769 | MET |
+| 3. F1 for `argument` | at least 0.40 | 0.000 | 0.000 | 0.000 | MISSED |
+| 4. Balance | `argument` at least 20%, no label above 55% | 20% / 51% | 20% / 51% | 20% / 51% | MET |
+| 5. Confidence gap (most-sure third minus least-sure third) | at least 0.15 | 0.40 | -0.10 | 0.30 | MISSED |
+
+Seed 42 confusion matrix after:
+
+| true \ predicted | praise | reaction | argument |
+|---|---|---|---|
+| **praise** | 9 | 0 | 0 |
+| **reaction** | 0 | 15 | 0 |
+| **argument** | 0 | 6 | 0 |
 
 **Did it help, and how do I know:**
-Yes, so far. On the two seeds finished, accuracy went from 0.533 to 0.800 and
-from 0.500 to 0.767, and macro F1 roughly tripled (0.294 to 0.611, 0.222 to
-0.584). That's well past the 0.500 you get by always guessing `reaction`, so
-the model is no longer stuck on one label.
+Mostly yes. Criteria 1 and 2 went from MISSED to MET on all three seeds.
+Accuracy rose from 0.533 / 0.500 / 0.500 to 0.800 / 0.767 / 0.700, and
+`praise` went from 0.200 / 0.000 / 0.000 to 1.000 / 0.941 / 0.800. The matrix
+shows why: real `praise` posts now land in the `praise` column instead of all
+going to `reaction`.
+
+It didn't fix everything. `argument` is still 0.000, and criterion 5 went from
+MET to MISSED: on seed 7 the least-sure third (0.9) did better than the
+most-sure third (0.8). That supports my note from before. The old pass was
+hollow, because once the model predicts more than one label, its confidence
+isn't reliably tied to being right.
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
@@ -611,29 +626,30 @@ the model is no longer stuck on one label.
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-Criterion 1 (accuracy) looks fixed: 0.800 and 0.767 on the two finished seeds.
-Per-label F1 for the after-run is still pending, so criteria 2, 3 and 5 aren't
-confirmed yet. Macro F1 of about 0.6 next to 0.8 accuracy suggests one label
-is still weak, most likely `argument`.
+Two criteria are still missed after the fix.
 
-- **If `argument` (criterion 3) is still under 0.40:** I'd add about 30 more
-  `argument` posts. It has only 40 examples, so just 6 land in each test
-  split, and one wrong call moves its F1 a lot.
-- **If `praise` (criterion 2) is still under 0.75:** I'd check whether the
-  misses go to `reaction` and reread my `praise` / `reaction` rows for that
-  boundary, since a comment that praises the host and reacts to the topic can
-  go either way.
+- **Criterion 3, `argument` F1 0.000 on all three seeds.** Every one of the
+  6 test `argument` posts went to `reaction` on every seed, and the model
+  never predicted `argument` once. With only 40 `argument` examples in total,
+  I'd next add about 30 more `argument` posts, then retrain. This is now a
+  "too few examples" problem rather than a training problem: the same
+  learning rate that fixed `praise` didn't touch `argument`.
+- **Criterion 5, confidence gap -0.10 on seed 7.** I'd look at the
+  most-confident posts it gets wrong, which are probably `argument` posts it
+  confidently calls `reaction`. If so, fixing `argument` should fix this too,
+  so I'd re-check it after adding examples rather than change it separately.
 - **Why I stopped:** The assignment allows one change, and I ran out of time to
-  test a second one separately.
+  test a second one properly.
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-I meant my labels to capture what a comment is *doing*: thanking, reacting,
-or arguing a point. Before the fix, the matrix shows the model learned only
-"most comments are `reaction`": all 9 `praise` and all 6 `argument` posts went
-into the `reaction` column on seeds 7 and 2024, so it never got far enough to
-learn the differences I labelled for.
+I meant `argument` to capture comments where a specific detail is the reason
+the claim holds, but the model has only learned it as "not obviously praise",
+so it files all 6 test `argument` posts under `reaction` on every seed. It
+picked up `praise` from surface words like "thank you", while my `argument` /
+`reaction` boundary depends on reasoning that 40 examples weren't enough to
+teach it.
 
 
 
